@@ -2,7 +2,7 @@
 
 A collection of hands-on **FastAPI backend projects** built as part of my **AI Engineer learning journey**.
 
-This repository documents my progression from basic REST API concepts to more advanced backend development including:
+This repository documents my progression from basic REST API concepts to more advanced backend development, including:
 
 - REST API development
 - Request & response handling
@@ -17,19 +17,22 @@ This repository documents my progression from basic REST API concepts to more ad
 - Pytest
 - Dependency Injection
 - API testing with Swagger UI
+- Web UI & Frontend Integration
 
 The projects are intentionally built step-by-step so that each project introduces new backend concepts while building on the previous one.
 
 ---
+
 ## 📚 Repository Projects
 
 | Project | Description | Main Concepts |
 |---|---|---|
-| [**Project 1 — FastAPI Request Method Logic**](./Project%201-%20FastAPI%20Request%20Method%20Logic) | Introduction to FastAPI and REST API fundamentals | HTTP Methods, Path Parameters, Query Parameters, CRUD |
-| [**Project 2 — FastAPI Book API**](./Project%202-FastAPI%20Book%20API%20%E2%80%94%20Validation%20%26%20CRUD) | Validated REST API with CRUD functionality | Pydantic, Validation, Status Codes, HTTPException |
-| [**Project 3 — Todo Management API**](./Project%203-Todo%20Management%20API) | Complete backend application with database and authentication | SQLAlchemy, SQLite, JWT, OAuth2, RBAC |
-| [**Project 3.5 — Alembic Database Migration**](./Project%203.5-Alembic%20Database%20Migration) | Database schema versioning and migration workflow | Alembic, Revisions, Upgrade/Downgrade, Schema Evolution |
-| [**Project 4 — Unit & Integration Testing**](./Project%204%20-FastAPI%20Unit%20%26%20Integration%20Testing) | Automated testing for the FastAPI application | Pytest, TestClient, Dependency Overrides, Integration Testing |
+| [**Project 1 — FastAPI Request Method Logic**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%201-%20FastAPI%20Request%20Method%20Logic) | Introduction to FastAPI and REST API fundamentals | HTTP Methods, Path Parameters, Query Parameters, CRUD |
+| [**Project 2 — FastAPI Book API**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%202-FastAPI%20Book%20API%20%E2%80%94%20Validation%20%26%20CRUD) | Validated REST API with CRUD functionality | Pydantic, Validation, Status Codes, HTTPException |
+| [**Project 3 — Todo Management API**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%203-Todo%20Management%20API) | Complete backend application with database and authentication | SQLAlchemy, SQLite, JWT, OAuth2, RBAC |
+| [**Project 3.5 — Alembic Database Migration**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%203.5-Alembic%20Database%20Migration) | Database schema versioning and migration workflow | Alembic, Revisions, Upgrade/Downgrade, Schema Evolution |
+| [**Project 4 — Unit & Integration Testing**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%204%20-FastAPI%20Unit%20%26%20Integration%20Testing) | Automated testing for the FastAPI application | Pytest, TestClient, Dependency Overrides, Integration Testing |
+| [**Project 5 — Todo App with Web UI & Frontend Integration**](https://github.com/connectwithaadi/FastAPI-Projects/tree/main/Project%205-Todo%20App%20with%20Web%20UI%20%26%20Frontend%20Integration) | Full-stack Todo application with a server-rendered web interface | Jinja2, HTML, CSS, Bootstrap, JavaScript, Templates, Authentication |
 
 ---
 
@@ -89,8 +92,8 @@ A Book Management REST API focused on **request validation and structured CRUD o
 ### Concepts Covered
 
 - Pydantic models
-  - `BaseModel`
-  - `Field()`
+- `BaseModel`
+- `Field()`
 - `Path()`
 - `Query()`
 - CRUD operations
@@ -150,10 +153,8 @@ A complete backend application implementing a **Todo Management System** with au
                             │
                             ▼
                         SQLite DB
-```
 
-#### Database Relationship
-```text
+Database Relationship
 Users
   │
   │ 1
@@ -161,11 +162,10 @@ Users
   │ N
   ▼
 Todos
-```
+
 Each Todo belongs to a specific authenticated user through a foreign key relationship.
 
-#### Authentication Flow
-```text
+Authentication Flow
 Username + Password
         │
         ▼
@@ -196,7 +196,6 @@ This project was a major step from simple APIs toward a real backend application
 ---
 
 ## 3.5️⃣ Project 3.5 — Alembic Database Migration
-
 An extension of the Todo Management API focused on database schema migration and version control using Alembic.
 Instead of relying only on automatic table creation, this project introduces a structured migration workflow for managing database changes.
 
@@ -236,13 +235,11 @@ Database Schema
 
 ### Common Commands
 
-```bash
-alembic revision --autogenerate -m "migration message"
-alembic upgrade head
-alembic downgrade -1
-alembic history
-alembic current
-```
+- `alembic revision --autogenerate -m "migration message"`
+- `alembic upgrade head`
+- `alembic downgrade -1`
+- `alembic history`
+- `alembic current`
 
 ### Technologies
 
@@ -263,7 +260,6 @@ It demonstrates how database changes can be tracked, applied, and rolled back th
 ---
 
 ## 4️⃣ Project 4 — FastAPI Unit & Integration Testing
-
 A testing-focused FastAPI project introducing automated testing using Pytest and FastAPI's TestClient.
 The project builds on the Todo Management API and tests its routes, authentication, dependencies, CRUD operations, and database-related functionality.
 
@@ -334,11 +330,133 @@ This project added automated testing to the backend development workflow and hel
 
 ---
 
-## 🧠 Skills Developed
+## 5️⃣ Project 5 — Todo App with Web UI & Frontend Integration
+A full-stack Todo application that extends the previous Todo backend by adding a server-rendered Web UI and frontend integration.
+This project demonstrates how FastAPI can be used not only to build APIs, but also to serve HTML pages and connect backend functionality with a user-facing web interface.
 
+### 🚀 Features
+
+- User registration
+- User login
+- Authentication
+- Todo creation
+- Todo listing
+- Todo editing
+- Todo management
+- Protected pages
+- Server-rendered HTML templates
+- Jinja2 template integration
+- Static CSS and JavaScript files
+- Bootstrap-based UI
+- Frontend and backend integration
+- Database-backed Todo operations
+
+### 🖥️ Web UI
+The application provides a browser-based interface for interacting with the Todo backend.
+- Login
+- Registration
+- Todo Dashboard
+- Edit Todo
+
+### 📂 Frontend Structure
+```text
+static/
+├── css/
+│   ├── base.css
+│   └── bootstrap.css
+│
+└── js/
+    ├── base.js
+    ├── bootstrap.js
+    ├── jquery-slim.js
+    └── popper.js
+
+templates/
+├── add-todo.html
+├── edit-todo.html
+├── home.html
+├── layout.html
+├── login.html
+├── navbar.html
+├── register.html
+└── todo.html
+```
+
+### 🏗️ Application Structure
+```text
+                    FastAPI
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+          ▼                         ▼
+      REST APIs                  Web UI
+          │                         │
+          │                    Jinja2 Templates
+          │                         │
+          └────────────┬────────────┘
+                       ▼
+                 Application Logic
+                       │
+                       ▼
+                 SQLAlchemy ORM
+                       │
+                       ▼
+                   SQLite DB
+```
+
+### 🛠️ Technologies
+
+- Python
+- FastAPI
+- SQLAlchemy
+- SQLite
+- Pydantic
+- Jinja2
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- JWT / Authentication
+- Alembic
+
+### 🧠 Concepts Learned
+Through this project, I practiced:
+
+- FastAPI web application development
+- Jinja2 templates
+- Template inheritance
+- HTML form handling
+- Static file serving
+- Frontend and backend integration
+- Authentication with web pages
+- Database-backed web applications
+- Reusing backend functionality through a web interface
+- Organizing frontend assets in a FastAPI project
+
+### What I Learned
+This project helped me move from API-only backend development toward building a complete application where the FastAPI backend communicates with a browser-based frontend.
+It also provided practical experience with the connection between:
+
+```text
+Frontend
+   ↓
+HTML Forms
+   ↓
+FastAPI Routes
+   ↓
+Business Logic
+   ↓
+SQLAlchemy
+   ↓
+Database
+```
+
+---
+
+## 🧠 Skills Developed
 Through these projects, I have developed practical experience with:
 
-**FastAPI**
+### FastAPI
 - FastAPI application structure
 - REST API development
 - Routing
@@ -349,8 +467,10 @@ Through these projects, I have developed practical experience with:
 - Request bodies
 - Dependency Injection
 - Swagger / OpenAPI
+- Jinja2 templates
+- Static files
 
-**API Development**
+### API Development
 - CRUD operations
 - HTTP methods
 - HTTP status codes
@@ -358,15 +478,16 @@ Through these projects, I have developed practical experience with:
 - API validation
 - Protected routes
 - Modular routers
+- Frontend/API integration
 
-**Data Validation**
-- Pydantic `BaseModel`
+### Data Validation
+- Pydantic BaseModel
 - Field validation
 - Query validation
 - Path validation
 - Request body validation
 
-**Databases**
+### Databases
 - SQLAlchemy ORM
 - SQLite
 - Relational database concepts
@@ -376,7 +497,7 @@ Through these projects, I have developed practical experience with:
 - Database sessions
 - Schema management
 
-**Authentication & Security**
+### Authentication & Security
 - OAuth2
 - JWT authentication
 - Password hashing
@@ -384,14 +505,14 @@ Through these projects, I have developed practical experience with:
 - Role-based authorization
 - Protected endpoints
 
-**Database Migrations**
+### Database Migrations
 - Alembic
 - Migration revisions
 - Schema versioning
 - Upgrade / downgrade workflow
 - Auto-generated migrations
 
-**Testing**
+### Testing
 - Pytest
 - Unit testing
 - Integration testing
@@ -400,34 +521,52 @@ Through these projects, I have developed practical experience with:
 - Authentication testing
 - CRUD testing
 
+### Frontend Integration
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Jinja2
+- Template inheritance
+- Static assets
+- Server-rendered pages
+- Form-based frontend/backend communication
+
 ---
 
 ## 📈 Learning Progression
-
-The projects follow a deliberate progression from basic API development to production-oriented backend concepts.
+The projects follow a deliberate progression from basic API development to a complete web application.
 
 ```text
-Project 1: FastAPI Fundamentals
+Project 1
+FastAPI Fundamentals
         │
         ▼
-Project 2: Validation + CRUD
+Project 2
+Validation + CRUD
         │
         ▼
-Project 3: Database + Authentication
+Project 3
+Database + Authentication
         │
         ▼
-Project 3.5: Alembic + Schema Migration
+Project 3.5
+Alembic + Schema Migration
         │
         ▼
-Project 4: Unit + Integration Testing
-     
+Project 4
+Unit + Integration Testing
+        │
+        ▼
+Project 5
+Web UI + Frontend Integration
+        │
+        ▼
+Full Stack FastAPI Application
 ```
 Each project adds another layer of backend engineering knowledge.
 
----
-
 ## 🏗️ Backend Development Journey
-
 ```text
                     REST APIs
                        │
@@ -459,17 +598,17 @@ Each project adds another layer of backend engineering knowledge.
              Automated Testing
                        │
                        ▼
+             Web UI Integration
+                       │
+                       ▼
               Full Stack Backend
 ```
 
----
-
 ## 🎯 Repository Goal
-
 The goal of this repository is to build strong backend engineering fundamentals using FastAPI before moving deeper into AI Engineering.
 Rather than only following tutorials, these projects provide hands-on experience with progressively more realistic backend systems.
+The long-term objective is to be able to build APIs and backend systems that can serve as the foundation for:
 
-The long-term objective is to be able to build APIs that can serve as the backend for:
 - AI applications
 - Machine Learning systems
 - LLM applications
@@ -478,10 +617,7 @@ The long-term objective is to be able to build APIs that can serve as the backen
 - Data-driven applications
 - Production web applications
 
----
-
 ## 🛠️ Development Approach
-
 The projects follow a practical learning approach:
 
 ```text
@@ -502,66 +638,5 @@ Document
      ▼
 Push to GitHub
 ```
+
 This repository therefore serves both as a learning record and as a portfolio of backend development work.
-
----
-
-## 📊 Project Status
-
-| Project | Status |
-|---------|--------|
-| Project 1 — FastAPI Request Method Logic | ✅ Completed |
-| Project 2 — FastAPI Book API | ✅ Completed |
-| Project 3 — Todo Management API | ✅ Completed |
-| Project 3.5 — Alembic Database Migration | ✅ Completed |
-| Project 4 — Unit & Integration Testing | ✅ Completed |
-
-
----
-
-## 🚀 What's Next?
-
-The next stage of the learning journey is to move toward a Full Stack FastAPI Application and then continue into more advanced backend and AI engineering concepts.
-
-**Planned progression:**
-```text
-FastAPI Fundamentals
-        ↓
-Advanced Backend Development
-        ↓
-Full Stack Integration
-        ↓
-PostgreSQL
-        ↓
-Docker
-        ↓
-Kubernetes
-        ↓
-Cloud / Deployment
-        ↓
-Machine Learning
-        ↓
-LLMs
-        ↓
-RAG
-        ↓
-AI Agents
-        ↓
-Production AI Applications
-```
-
----
-
-## 📌 Why This Repository?
-
-This repository demonstrates my progression from:
-*"How does a FastAPI endpoint work?"*
-to:
-*"How do I build, secure, migrate, test, and eventually deploy a backend application?"*
-
-The focus is on developing practical engineering skills rather than only learning framework syntax.
-
----
-
-## 👨‍💻 Author
-**Aditya Kumar Singh**
